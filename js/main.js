@@ -5,6 +5,7 @@
   const hotspots = document.querySelectorAll(".Hotspot");
 
   const marterialsCon = document.querySelector("#marterialsCon");
+  const loading = document.querySelector("#loading");
 
   const spinner = `<svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -21,6 +22,7 @@
   </svg>`;
 
 
+
     //This information needs to be removed then pulled with an AJAX Call using the Fetch API
     //this is the api url https://swiftpixel.com/earbud/api/materials"
 
@@ -31,9 +33,10 @@
     });
   }
 
+
+
   function loadInfoBoxes() {
     function getData() {
-    //model.innerHTML = spinner;
     fetch("https://swiftpixel.com/earbud/api/infoboxes")
     .then(response => response.json())
     .then(info => {
@@ -55,8 +58,6 @@
       info.appendChild(textElement);
       info.appendChild(imgElement);
     });
-
-    // model.appendChild(selected);
     
     })
     .catch(error => console.error(error)); //catch and report any errors
@@ -66,7 +67,11 @@
   }
   loadInfoBoxes();
 
+  loading.innerHTML = spinner
 
+
+
+//loadMateraials
   function loadMateraialsBox(){
     function getData() {
     fetch("https://swiftpixel.com/earbud/api/materials")
@@ -100,8 +105,6 @@
   }
   loadMateraialsBox();
   
-
-
 
 
 
