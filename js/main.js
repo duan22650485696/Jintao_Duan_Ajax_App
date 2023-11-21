@@ -67,7 +67,20 @@
   }
   loadInfoBoxes();
 
+
+  //loading feature
+
   loading.innerHTML = spinner
+
+  //user message
+   if (model) {
+    loading.style.display = 'none';
+    alert('Try again');
+  } else {
+  loading.innerHTML = spinner
+  }
+
+
 
 
 
